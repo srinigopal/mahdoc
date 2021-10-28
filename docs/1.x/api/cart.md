@@ -760,6 +760,267 @@ You can move a product from cart to wishlist. To do this task, you have to use t
 
 :::
 
+## Save patient information to cart
+
+At the checkout step, customers can create new patient information or select from the existing patient information for billing & shipping the cart's item. You can achieve this task by using the `checkout/save-patient` resource in the API URL. This API will work for both logged-in customers and guest users.
+
+- Request
+
+  `POST <host>/api/checkout/save-patient`
+
+### Examples
+
+#### 1. For logged in user,
+
+- Request
+
+  `POST http(s)://example.com/api/checkout/save-patient`
+
+- Params
+
+  ```json
+  {
+	"patient_info": {
+  
+    "name": "jjjjjjjjjj",
+    "age": "john",
+    "gender": "doe",
+    "relation": 1,
+    "id":113
+	}
+  
+  }
+  ```
+
+
+
+::: details Response
+
+```json
+{
+    "data": {
+        "methods": [
+            {
+                "method": "cashondelivery",
+                "method_title": "Cash On Delivery",
+                "description": "Cash On Delivery",
+                "sort": "1"
+            }
+        ],
+        "cart": {
+            "id": 58,
+            "customer_email": "rt@example.com",
+            "customer_first_name": "srinirt",
+            "customer_last_name": "vasan",
+            "shipping_method": null,
+            "coupon_code": null,
+            "is_gift": 0,
+            "items_count": 2,
+            "items_qty": "2.0000",
+            "exchange_rate": null,
+            "global_currency_code": "INR",
+            "base_currency_code": "INR",
+            "channel_currency_code": "INR",
+            "cart_currency_code": "INR",
+            "grand_total": "2590.0000",
+            "formated_grand_total": "₹2,590.00",
+            "base_grand_total": "2590.0000",
+            "formated_base_grand_total": "₹2,590.00",
+            "sub_total": "2590.0000",
+            "formated_sub_total": "₹2,590.00",
+            "base_sub_total": "2590.0000",
+            "formated_base_sub_total": "₹2,590.00",
+            "tax_total": "0.0000",
+            "formated_tax_total": "₹0.00",
+            "base_tax_total": "0.0000",
+            "formated_base_tax_total": "₹0.00",
+            "discount": "0.0000",
+            "formated_discount": "₹0.00",
+            "base_discount": "0.0000",
+            "formated_base_discount": "₹0.00",
+            "checkout_method": null,
+            "is_guest": 0,
+            "is_active": 1,
+            "conversion_time": null,
+            "customer": null,
+            "channel": null,
+            "items": [
+                {
+                    "id": 92,
+                    "quantity": 1,
+                    "sku": "temp41",
+                    "type": "simple",
+                    "name": "cbv",
+                    "coupon_code": null,
+                    "weight": "12.0000",
+                    "total_weight": "12.0000",
+                    "base_total_weight": "12.0000",
+                    "price": "400.0000",
+                    "formated_price": "₹400.00",
+                    "base_price": "400.0000",
+                    "formated_base_price": "₹400.00",
+                    "custom_price": null,
+                    "formated_custom_price": "₹0.00",
+                    "total": "400.0000",
+                    "formated_total": "₹400.00",
+                    "base_total": "400.0000",
+                    "formated_base_total": "₹400.00",
+                    "tax_percent": "0.0000",
+                    "tax_amount": "0.0000",
+                    "formated_tax_amount": "₹0.00",
+                    "base_tax_amount": "0.0000",
+                    "formated_base_tax_amount": "₹0.00",
+                    "discount_percent": "0.0000",
+                    "discount_amount": "0.0000",
+                    "formated_discount_amount": "₹0.00",
+                    "base_discount_amount": "0.0000",
+                    "formated_base_discount_amount": "₹0.00",
+                    "additional": {
+                        "_token": "NaQkzr7EfhAZO3Mwj6veah1amb2RiKfra7Q3Lsyh",
+                        "product_id": "23",
+                        "quantity": 1
+                    },
+                    "child": null,
+                    "product": {
+                        "id": 23,
+                        "sku": "temp41",
+                        "type": "simple",
+                        "name": "cbv",
+                        "url_key": "temp3",
+                        "price": "400.0000",
+                        "formated_price": "₹400.00",
+                        "short_description": "<p>temp1</p>",
+                        "description": "<p>temp1</p>",
+                        "images": [],
+                        "videos": [],
+                        "base_image": {
+                            "small_image_url": "http://127.0.0.1:8000/vendor/webkul/ui/assets/images/product/small-product-placeholder.webp",
+                            "medium_image_url": "http://127.0.0.1:8000/vendor/webkul/ui/assets/images/product/meduim-product-placeholder.webp",
+                            "large_image_url": "http://127.0.0.1:8000/vendor/webkul/ui/assets/images/product/large-product-placeholder.webp",
+                            "original_image_url": "http://127.0.0.1:8000/vendor/webkul/ui/assets/images/product/large-product-placeholder.webp"
+                        },
+                        "created_at": "2021-10-28T06:21:05.000000Z",
+                        "updated_at": "2021-10-28T06:21:05.000000Z",
+                        "reviews": {
+                            "total": 0,
+                            "total_rating": 0,
+                            "average_rating": 0,
+                            "percentage": []
+                        },
+                        "in_stock": true,
+                        "is_saved": false,
+                        "is_wishlisted": false,
+                        "is_item_in_cart": true,
+                        "show_quantity_changer": true
+                    },
+                    "created_at": "2021-10-28T06:28:26.000000Z",
+                    "updated_at": "2021-10-28T10:32:05.000000Z"
+                },
+                {
+                    "id": 93,
+                    "quantity": 1,
+                    "sku": "anemiaprofile",
+                    "type": "simple",
+                    "name": "Anemia Profile",
+                    "coupon_code": null,
+                    "weight": "10.0000",
+                    "total_weight": "10.0000",
+                    "base_total_weight": "10.0000",
+                    "price": "2190.0000",
+                    "formated_price": "₹2,190.00",
+                    "base_price": "2190.0000",
+                    "formated_base_price": "₹2,190.00",
+                    "custom_price": null,
+                    "formated_custom_price": "₹0.00",
+                    "total": "2190.0000",
+                    "formated_total": "₹2,190.00",
+                    "base_total": "2190.0000",
+                    "formated_base_total": "₹2,190.00",
+                    "tax_percent": "0.0000",
+                    "tax_amount": "0.0000",
+                    "formated_tax_amount": "₹0.00",
+                    "base_tax_amount": "0.0000",
+                    "formated_base_tax_amount": "₹0.00",
+                    "discount_percent": "0.0000",
+                    "discount_amount": "0.0000",
+                    "formated_discount_amount": "₹0.00",
+                    "base_discount_amount": "0.0000",
+                    "formated_base_discount_amount": "₹0.00",
+                    "additional": {
+                        "quantity": 1,
+                        "product_id": "17",
+                        "_token": "NaQkzr7EfhAZO3Mwj6veah1amb2RiKfra7Q3Lsyh"
+                    },
+                    "child": null,
+                    "product": {
+                        "id": 17,
+                        "sku": "anemiaprofile",
+                        "type": "simple",
+                        "name": "Anemia Profile",
+                        "url_key": "anemia-profile",
+                        "price": "2190.0000",
+                        "formated_price": "₹2,190.00",
+                        "short_description": "<p><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; text-align: justify;\">Feeling tired is not new, but continuous weakness may have an undetected underlying cause. These tests serve as a basic and effective screening for anemia</span></p>",
+                        "description": "<p><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; text-align: justify;\">Feeling tired is not new, but continuous weakness may have an undetected underlying cause. These tests serve as a basic and effective screening for anemia</span></p>",
+                        "images": [
+                            {
+                                "id": 8,
+                                "path": "product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                                "url": "http://127.0.0.1:8000/storage/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                                "original_image_url": "http://127.0.0.1:8000/storage/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                                "small_image_url": "http://127.0.0.1:8000/cache/small/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                                "medium_image_url": "http://127.0.0.1:8000/cache/medium/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                                "large_image_url": "http://127.0.0.1:8000/cache/large/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg"
+                            }
+                        ],
+                        "videos": [],
+                        "base_image": {
+                            "small_image_url": "http://127.0.0.1:8000/cache/small/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                            "medium_image_url": "http://127.0.0.1:8000/cache/medium/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                            "large_image_url": "http://127.0.0.1:8000/cache/large/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg",
+                            "original_image_url": "http://127.0.0.1:8000/cache/original/product/17/kjqCqdlx2o3Fh7Y5basgno9JmXnHa5xRPXBjfn4u.jpg"
+                        },
+                        "created_at": "2021-10-16T06:19:11.000000Z",
+                        "updated_at": "2021-10-16T06:19:11.000000Z",
+                        "reviews": {
+                            "total": 0,
+                            "total_rating": 0,
+                            "average_rating": 0,
+                            "percentage": []
+                        },
+                        "in_stock": true,
+                        "is_saved": false,
+                        "is_wishlisted": false,
+                        "is_item_in_cart": true,
+                        "show_quantity_changer": true
+                    },
+                    "created_at": "2021-10-28T06:28:37.000000Z",
+                    "updated_at": "2021-10-28T10:32:05.000000Z"
+                }
+            ],
+            "selected_shipping_rate": null,
+            "payment": null,
+            "billing_address": null,
+            "shipping_address": null,
+            "created_at": "2021-10-28T06:28:26.000000Z",
+            "shipping_date": null,
+            "updated_at": "2021-10-28T10:32:05.000000Z",
+            "taxes": "{\"0\":0}",
+            "formated_taxes": "{\"0\":\"\\u20b90.00\"}",
+            "base_taxes": "{\"0\":0}",
+            "formated_base_taxes": "{\"0\":\"\\u20b90.00\"}",
+            "formated_discounted_sub_total": "₹2,590.00",
+            "formated_base_discounted_sub_total": "₹2,590.00"
+        }
+    }
+}
+```
+
+
+
+:::
+
+
 ## Save addresses to cart
 
 At the checkout step, customers can create new addresses or select from the existing addresses for billing & shipping the cart's item. You can achieve this task by using the `checkout/save-address` resource in the API URL. This API will work for both logged-in customers and guest users.

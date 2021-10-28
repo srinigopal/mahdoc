@@ -23,6 +23,7 @@ module.exports = [
             ['api/customers', 'Customers'],
             ['api/locales', 'Locales'],
             ['api/addresses', 'Addresses'],
+            ['api/patients', 'Patients'],
             ['api/products', 'Products'],
             ['api/categories', 'Categories'],
             ['api/attributes', 'Attributes'],
