@@ -910,7 +910,9 @@ After saving the customer's addresses to the cart, you have to select a shipping
 
   ```json
   {
-    "shipping_method": "shipping_method_key"
+    "shipping_method": "shipping_method_key",
+    "shipping_date": "shipping_date",
+    "shipping_time": "shipping_time",
   }
   ```
 
@@ -931,7 +933,9 @@ After saving the customer's addresses to the cart, you have to select a shipping
 
   ```json
   {
-    "shipping_method": "flatrate_flatrate"
+    "shipping_method": "flatrate_flatrate",
+	"shipping_date": "2021-10-30",
+    "shipping_time": "15:20",
   }
   ```
 

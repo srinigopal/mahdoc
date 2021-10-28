@@ -4,6 +4,37 @@ In this section, we will use all APIs which relates to customer like registratio
 
 Let's start with registration first,
 
+
+## Otp Registration
+
+You can create/signup a new customer in the  store. To achieve this task, you can use the `customer/register` API call resource.
+
+
+- Headers
+
+  | Key                   | Value            |
+  | --------------------- | ---------------- |
+  | Accept                | application/json |
+
+- Request
+
+  `POST <host>/api/customer/signup`
+  
+  - Params
+
+  | Name                  | Info             | Type   |
+  | --------------------- | ---------------- | ------ |
+  | phone                 | phone            | Number |
+  
+::: details Response
+
+  ~~~json
+  {
+      message: "Otp sent successfully."
+  }
+  ~~~
+
+:::
 ## Registration
 
 You can create/register a new customer in the Bagisto store. To achieve this task, you can use the `customer/register` API call resource.
@@ -180,6 +211,149 @@ By removing the token key from request will activate the **customer guard**.
 - Request
 
   `POST http(s)://example.com/api/customer/login`
+
+- Params
+
+  | Key      | Value            |
+  | -------- | ---------------- |
+  | email    | john@example.com |
+  | password | john123          |
+
+::: details Response
+
+  Once you send the request, then you will get data without token because now the **customer guard** is active.
+
+  ~~~json
+  {
+      "token": true,
+      "message": "Logged in successfully.",
+      "data": {
+          "id": 1,
+          "email": "john@example.com",
+          "first_name": "John",
+          "last_name": "Doe",
+          "name": "John Doe",
+          "gender": null,
+          "date_of_birth": null,
+          "phone": null,
+          "status": 1,
+          "group": {
+              "id": 2,
+              "name": "General",
+              "created_at": null,
+              "updated_at": null
+          },
+          "created_at": "2020-09-28T05:13:42.000000Z",
+          "updated_at": "2020-09-28T05:13:42.000000Z"
+      }
+  }
+  ~~~
+
+:::
+
+
+
+## Otp Authentication
+
+To authenticate at the Bagisto store, the customer needs a valid email address and password.
+
+- Headers
+
+  | Key    | Value            |
+  | ------ | ---------------- |
+  | Accept | application/json |
+
+- Request
+  
+  Now here is your choice, whether you want to use **JWT API guard** or normal **customer guard**.
+
+  ::: tip
+
+    If you want to know more about the JWT Authentication, please check here [JWT Authentication](./getting-started-with-the-api#_1-jwt-authentication).
+
+  :::
+
+  For JWT API guard, you need to pass the token key in the query string.
+
+  `POST <host>/api/otpLogin?token=true`
+
+  For normal customer guard,
+
+  `POST <host>/api/otpLogin`
+
+- Params
+
+  | Name          | Info                  | Type   |
+  | ------------- | --------------------- | ------ |
+  | phone         | phone for customer    | Number |
+  | otp     	  | otp for customer | Number |
+
+### Both Examples
+
+#### 1. Let's try the customer authentication with JWT API guard
+
+- Headers
+
+  | Key    | Value            |
+  | ------ | ---------------- |
+  | Accept | application/json |
+
+- Request
+
+  `POST http(s)://example.com/api/otpLogin?token=true`
+
+- Params
+
+  | Key      | Value            |
+  | -------- | ---------------- |
+  | email    | john@example.com |
+  | password | john123          |
+
+::: details Response
+
+  Once you send the request, you will get some random token string that will be used to access the API data.
+
+  ~~~json
+  {
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2RldmVsb3BtZW50XC9iYWdpc3RvLW1hc3RlclwvcHVibGljXC9hcGlcL2N1c3RvbWVyXC9sb2dpbiIsImlhdCI6MTYxMDY5Njk2MSwiZXhwIjoxNjEwNzAwNTYxLCJuYmYiOjE2MTA2OTY5NjEsImp0aSI6IkpuMU9aUWoxd1BVaXlLaHQiLCJzdWIiOjEsInBydiI6IjhmY2EwODhhYmFlMmY5YThmODRhNWYwYmY2YTY1MjQ0OTA1NWJlMDAifQ.6mKgyRgMHxi_W6gf2cgb7Rdcut73L1YEBauYZ8soKSU",
+      "message": "Logged in successfully.",
+      "data": {
+          "id": 1,
+          "email": "john@example.com",
+          "first_name": "John",
+          "last_name": "Doe",
+          "name": "John Doe",
+          "gender": null,
+          "date_of_birth": null,
+          "phone": null,
+          "status": 1,
+          "group": {
+              "id": 2,
+              "name": "General",
+              "created_at": null,
+              "updated_at": null
+          },
+          "created_at": "2020-09-28T05:13:42.000000Z",
+          "updated_at": "2020-09-28T05:13:42.000000Z"
+      }
+  }
+  ~~~
+
+:::
+
+#### 2. Let's try without token
+
+By removing the token key from request will activate the **customer guard**.
+
+- Headers
+
+  | Key    | Value            |
+  | ------ | ---------------- |
+  | Accept | application/json |
+
+- Request
+
+  `POST http(s)://example.com/api/otpLogin`
 
 - Params
 
