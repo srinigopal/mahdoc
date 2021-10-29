@@ -24,6 +24,7 @@ module.exports = [
             ['api/locales', 'Locales'],
             ['api/addresses', 'Addresses'],
             ['api/patients', 'Patients'],
+            ['api/userprescription', 'Userprescription'],
             ['api/products', 'Products'],
             ['api/categories', 'Categories'],
             ['api/attributes', 'Attributes'],
