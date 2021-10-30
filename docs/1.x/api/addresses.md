@@ -15,7 +15,7 @@ To add an address, you have to use the `addresses/create` endpoint url and have 
 
 - Request
 
-  `POST <host>/api/addresses/create`
+  `POST <host>/api/addresses/create?token=true`
 
 - Params
 
@@ -42,7 +42,7 @@ Let's take an example of creating an address,
 
 - Request
 
-  `POST http(s)://example.com/api/addresses/create`
+  `POST http(s)://example.com/api/addresses/create?token=true`
 
 - Params
 
@@ -109,7 +109,7 @@ Let's take an example,
 
 - Request
 
-  `GET http(s)://example.com/api/addresses`
+  `GET http(s)://example.com/api/addresses?token=true`
 
 ::: details Response
 
@@ -155,7 +155,7 @@ To get the customer's specific address, you have to pass an `address_id` as a re
 
 - Request
 
-  `GET <host>/api/addresses/{address_id}`
+  `GET <host>/api/addresses/{address_id}?token=true`
 
 - Params
 
@@ -176,7 +176,7 @@ Let's take an example,
 
 - Request
 
-  `GET http(s)://example.com/api/addresses/1`
+  `GET http(s)://example.com/api/addresses/1?token=true`
 
 ::: details Response
 
@@ -247,7 +247,7 @@ To update the customer's specific address, you have to pass an `address_id` as a
 
 - Request
 
-  `PUT http(s)://example.com/api/addresses/1`
+  `PUT http(s)://example.com/api/addresses/1?token=true`
 
 - Params
 

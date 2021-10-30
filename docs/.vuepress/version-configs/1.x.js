@@ -27,6 +27,7 @@ module.exports = [
             ['api/userprescription', 'Userprescription'],
             ['api/products', 'Products'],
             ['api/categories', 'Categories'],
+            ['api/search', 'Search'],
             ['api/attributes', 'Attributes'],
             ['api/attribute-families', 'Attribute Families'],
             ['api/cart', 'Shopping Cart'],
@@ -37,6 +38,9 @@ module.exports = [
             ['api/transactions', 'Transactions'],
             ['api/reviews', 'Reviews'],
             ['api/wishlists', 'Wishlists'],
+            ['api/phlebotomists', 'Phlebotomists'],
+            ['api/featuredproducts', 'Featuredproducts'],
+            ['api/newproducts', 'Newproducts'],
         ])
     },
    

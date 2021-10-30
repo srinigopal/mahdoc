@@ -407,7 +407,7 @@ You can get the customer's details only for the logged-in customer. To retrieve 
 
 - Request
 
-  `GET <host>/api/customer/get`
+  `GET <host>/api/customer/get?token=true`
 
 ### Examples
 
@@ -465,7 +465,7 @@ You can also get the customer information by using `customer_id` as a request pa
 
 - Request
 
-  `GET <host>/api/customers/{id}`
+  `GET <host>/api/customers/{id}?token=true`
 
 - Params
 
@@ -492,7 +492,7 @@ Let's fetch the customer data,
 
 - Request
 
-  `GET http(s)://example.com/api/customers/1`
+  `GET http(s)://example.com/api/customers/1?token=true`
 
 ::: details Response
 
@@ -535,7 +535,7 @@ To update the current logged in customer's account information, you need to use 
 
 - Request
 
-  `PUT <host>/api/customer/profile`
+  `PUT <host>/api/customer/profile?token=true`
 
 - Params
 
@@ -561,7 +561,7 @@ To update the current logged in customer's account information, you need to use 
 
 - Request
 
-  `PUT http(s)://example.com/api/customer/profile`
+  `PUT http(s)://example.com/api/customer/profile?token=true`
 
 - Params
 

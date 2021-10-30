@@ -15,7 +15,7 @@ To add an Userprescription, you have to use the `atients` endpoint url and have 
 
 - Request
 
-  `POST <host>/api/userprescription`
+  `POST <host>/api/userprescription?token=true`
 
 - Params
 
@@ -39,13 +39,13 @@ Let's take an example of creating an patients,
 
 - Request
 
-  `POST http(s)://example.com/api/userprescription`
+  `POST http(s)://example.com/api/userprescription?token=true`
 
 - Params
 
   | Name         | Value           |
   | ------------ | --------------- |
-  | file         | file       		|
+  | file         | file.doc      		|
   | name     	 | Satiz           |
   | mobile_number | 9600604471     |
   
@@ -93,7 +93,7 @@ To get all the address of a customer, that customer must be logged in to the sto
 
 - Request
 
-  `GET <host>/api/userprescription`
+  `GET <host>/api/userprescription?token=true`
 
 ### Examples
 
@@ -108,7 +108,7 @@ Let's take an example,
 
 - Request
 
-  `GET http(s)://example.com/api/userprescription`
+  `GET http(s)://example.com/api/userprescription?token=true`
 
 ::: details Response
 

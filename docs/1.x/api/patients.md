@@ -15,7 +15,7 @@ To add an Patients, you have to use the `atients` endpoint url and have to pass 
 
 - Request
 
-  `POST <host>/api/patients`
+  `POST <host>/api/patients?token=true`
 
 - Params
 
@@ -39,7 +39,7 @@ Let's take an example of creating an patients,
 
 - Request
 
-  `POST http(s)://example.com/api/patients`
+  `POST http(s)://example.com/api/patients?token=true`
 
 - Params
 
@@ -94,7 +94,7 @@ To get all the address of a customer, that customer must be logged in to the sto
 
 - Request
 
-  `GET <host>/api/patients`
+  `GET <host>/api/patients?token=true`
 
 ### Examples
 
@@ -109,7 +109,7 @@ Let's take an example,
 
 - Request
 
-  `GET http(s)://example.com/api/patients`
+  `GET http(s)://example.com/api/patients?token=true`
 
 ::: details Response
 
